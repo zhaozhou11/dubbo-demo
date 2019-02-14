@@ -10,6 +10,7 @@ public class ConsumerMain {
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("config/rpc/dubbo-rpc-consumer.xml");
         context.start();
+        //RpcContext.getContext().setAttachment("appCode", "zhaozhou11");
         DubboTestApi testApi = (DubboTestApi) context.getBean("dubboTestApi"); // 获取远程服务代理
         String ret = testApi.echoTest("this is my test!");
         System.out.println(ret); // 显示调用结果

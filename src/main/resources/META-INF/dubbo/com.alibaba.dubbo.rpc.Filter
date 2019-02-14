@@ -1,0 +1,2 @@
+acessFilter=dubbo.demo.filter.ProviderRpcFilter
+consumerFilter=dubbo.demo.filter.ConsumerRpcFilter
