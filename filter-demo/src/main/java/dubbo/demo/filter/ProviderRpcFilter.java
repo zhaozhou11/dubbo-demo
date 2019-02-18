@@ -1,7 +1,7 @@
 package dubbo.demo.filter;
 
 import com.alibaba.dubbo.rpc.*;
-import org.apache.logging.log4j.util.Strings;
+import com.google.common.base.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,7 +20,7 @@ public class ProviderRpcFilter implements Filter{
         String appCode = RpcContext.getContext().getAttachment("appCode");
         String secretKey = RpcContext.getContext().getAttachment("secretKey");
 
-        if(Strings.isEmpty(appCode) || Strings.isEmpty(secretKey)){
+        if(!Strings.isNullOrEmpty(appCode) || !Strings.isNullOrEmpty(secretKey)){
             throw new RpcException("Sorry, your access is denied!");
         }
 

@@ -1,5 +1,6 @@
 package dubbo.demo.provider;
 
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
